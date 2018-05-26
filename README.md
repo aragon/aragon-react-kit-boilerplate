@@ -12,7 +12,7 @@ This boilerplate also includes a fully working example app, complete with a back
 Kit support requires using the Aragon CLI 4.1.0 beta versions.
 ```sh
 npm install -g @aragon/cli@beta
-aragon init foo.aragonpm.test react
+aragon init app aragon/aragon-react-kit-boilerplate
 ```
 
 ## Run the kit
