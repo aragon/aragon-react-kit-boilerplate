@@ -1,4 +1,4 @@
-# Aragon React Boilerplate
+# Aragon React Kit Boilerplate
 
 > 🕵️ [Find more boilerplates using GitHub](https://github.com/search?q=topic:aragon-boilerplate) | 
 > ✨ [Official boilerplates](https://github.com/search?q=topic:aragon-boilerplate+org:aragon)
@@ -9,8 +9,16 @@ This boilerplate also includes a fully working example app, complete with a back
 
 ## Usage
 
+Kit support requires using the Aragon CLI 4.1.0 beta versions.
 ```sh
+npm install -g @aragon/cli@beta
 aragon init foo.aragonpm.test react
+```
+
+## Run the kit
+
+```sh
+aragon run --kit Kit --kit-init @ARAGON_ENS
 ```
 
 ## Prerequisites
