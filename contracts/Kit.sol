@@ -13,7 +13,7 @@ import "@aragon/os/contracts/lib/minime/MiniMeToken.sol";
 import "./CounterApp.sol";
 
 contract KitBase is APMNamehash {
-	ENS public ens;
+    ENS public ens;
     DAOFactory public fac;
 
     event DeployInstance(address dao);
@@ -51,10 +51,10 @@ contract Kit is KitBase {
 
 	function newInstance() {
 		Kernel dao = fac.newDAO(this);
-        ACL acl = ACL(dao.acl());
-        acl.createPermission(this, dao, dao.APP_MANAGER_ROLE(), this);
+		ACL acl = ACL(dao.acl());
+		acl.createPermission(this, dao, dao.APP_MANAGER_ROLE(), this);
 
-        address root = msg.sender;
+		address root = msg.sender;
 		bytes32 appId = apmNamehash("app");
 		bytes32 votingAppId = apmNamehash("voting");
 		bytes32 tokenManagerAppId = apmNamehash("token-manager");
@@ -81,13 +81,13 @@ contract Kit is KitBase {
 
 		// Clean up permissions
 		acl.grantPermission(root, dao, dao.APP_MANAGER_ROLE());
-        acl.revokePermission(this, dao, dao.APP_MANAGER_ROLE());
-        acl.setPermissionManager(root, dao, dao.APP_MANAGER_ROLE());
+		acl.revokePermission(this, dao, dao.APP_MANAGER_ROLE());
+		acl.setPermissionManager(root, dao, dao.APP_MANAGER_ROLE());
 
-        acl.grantPermission(root, acl, acl.CREATE_PERMISSIONS_ROLE());
-        acl.revokePermission(this, acl, acl.CREATE_PERMISSIONS_ROLE());
-        acl.setPermissionManager(root, acl, acl.CREATE_PERMISSIONS_ROLE());
+		acl.grantPermission(root, acl, acl.CREATE_PERMISSIONS_ROLE());
+		acl.revokePermission(this, acl, acl.CREATE_PERMISSIONS_ROLE());
+		acl.setPermissionManager(root, acl, acl.CREATE_PERMISSIONS_ROLE());
 
-        DeployInstance(dao);
+		DeployInstance(dao);
 	}
 }
