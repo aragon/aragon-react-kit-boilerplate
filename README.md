@@ -9,21 +9,23 @@ This boilerplate also includes a fully working example app, complete with a back
 
 ## Usage
 
-Kit support requires using the Aragon CLI 4.1.0 beta versions.
+Kit support requires using the Aragon CLI with a version greater than 4.1.0.
 ```sh
-npm install -g @aragon/cli@beta
+npm install -g @aragon/cli
 aragon init app aragon/aragon-react-kit-boilerplate
 ```
+
+## Make the kit work with your app
+
+- In order for the kit to work properly, it needs to know what the name of your app is. Replace `app` in [this line](https://github.com/aragon/aragon-react-kit-boilerplate/blob/dd7d571da4ab1ee6a0a82130b0c2c5d6218771b6/contracts/Kit.sol#L58) with the name of your app in the `arapp.json` file (e.g. `myapp` for `myapp.aragonpm.eth`)
+
+- Edit the roles defined in the kit to configure your DAO as you want!
 
 ## Run the kit
 
 ```sh
 aragon run --kit Kit --kit-init @ARAGON_ENS
 ```
-
-## Prerequisites
-
-- [**truffle**](https://github.com/trufflesuite/truffle): Used to build and test the contracts
 
 ## What's in the box?
 
