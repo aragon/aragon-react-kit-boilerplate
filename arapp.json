@@ -1,6 +1,6 @@
 {
   "appName": "app.aragonpm.eth",
-  "version": "19.0.1",
+  "version": "1.0.0",
   "roles": [
     {
       "name": "Increment the counter",
