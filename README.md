@@ -12,7 +12,7 @@ This boilerplate also includes a fully working example app, complete with a back
 Kit support requires using the Aragon CLI with a version greater than 4.1.0.
 ```sh
 npm install -g @aragon/cli
-aragon init app aragon/aragon-react-kit-boilerplate
+aragon init app react-kit
 ```
 
 ## Make the kit work with your app
@@ -27,13 +27,35 @@ aragon init app aragon/aragon-react-kit-boilerplate
 aragon run --kit Kit --kit-init @ARAGON_ENS
 ```
 
+## Running your app
+
+### Using HTTP
+
+Running your app using HTTP will allow for a faster development process of your app's front-end, as it can be hot-reloaded without the need to execute `aragon run` every time a change is made.
+
+- First start your app's development server running `npm run start:app`, and keep that process running. By default it will rebuild the app and reload the server when changes to the source are made.
+
+- After that, you can run `npm run start:aragon:http` or `npm run start:aragon:http:kit` which will compile your app's contracts, publish the app locally and create a DAO. You will need to stop it and run it again after making changes to your smart contracts.
+
+Changes to the app's background script (`app/script.js`) cannot be hot-reloaded, after making changes to the script, you will need to either restart the development server (`npm run start:app`) or rebuild the script `npm run build:script`.
+
+### Using IPFS
+
+Running your app using IPFS will mimic the production environment that will be used for running your app. `npm run start:aragon:ipfs` will run your app using IPFS. Whenever a change is made to any file in your front-end, a new version of the app needs to be published, so the command needs to be restarted.
+
 ## What's in the box?
 
 ### npm Scripts
 
-- **start**: Run the app locally
+- **start** or **start:aragon:ipfs**: Runs your app inside a DAO served from IPFS
+- **start:aragon:http**: Runs your app inside a DAO served with HTTP (hot reloading)
+- **start:aragon:ipfs:kit**: Creates a DAO with the Kit and serves the app from IPFS
+- **start:aragon:http:kit**: Creates a DAO with the Kit and serves the app with HTTP (hot reloading)
+- **start:app**: Starts a development server for your app
 - **compile**: Compile the smart contracts
-- **build**: Compiles the contracts and builds the front-end
+- **build**: Builds the front-end and background script
+- **build:app**: Builds the front-end
+- **build:script**: Builds the background script
 - **test**: Runs tests for the contracts
 - **publish**: Builds the apps and the contracts and publishes them to IPFS and APM
 
