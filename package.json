@@ -14,7 +14,7 @@
     "styled-components": "^3.2.6"
   },
   "devDependencies": {
-    "@aragon/cli": "4.2.3",
+    "@aragon/cli": "^4.2.3",
     "babel-core": "^6.26.3",
     "babel-plugin-styled-components": "^1.5.1",
     "babel-plugin-transform-runtime": "^6.23.0",
@@ -28,7 +28,7 @@
     "start:aragon:http": "aragon run --http localhost:8001 --http-served-from ./dist",
     "start:aragon:ipfs:kit": "npm run start:aragon:ipfs -- --kit Kit --kit-init @ARAGON_ENS",
     "start:aragon:http:kit": "npm run start:aragon:http -- --kit Kit --kit-init @ARAGON_ENS",
-    "start:app": "npm run sync-assets && npm run build:script -- --no-minify && parcel serve app/index.html -p 8001 --out-dir dist/",
+    "start:app": "npm run sync-assets && npm run build:script -- --no-minify && parcel serve app/index.html -p 8001 --out-dir dist/ --no-cache",
     "test": "aragon contracts test",
     "compile": "aragon contracts compile",
     "sync-assets": "mkdir -p dist; rsync -rtu \"$(dirname $(node -p 'require.resolve(\"@aragon/ui\")'))/\" dist/aragon-ui",
