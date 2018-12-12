@@ -1,3 +1,13 @@
+/*
+ * SPDX-License-Identitifer:    GPL-3.0-or-later
+ *
+ * This file requires contract dependencies which are licensed as
+ * GPL-3.0-or-later, forcing it to also be licensed as such.
+ *
+ * This is the only file in your project that requires this license and
+ * you are free to choose a different license for the rest of the project.
+ */
+
 pragma solidity 0.4.24;
 
 import "@aragon/os/contracts/factory/DAOFactory.sol";

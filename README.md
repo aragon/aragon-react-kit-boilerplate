@@ -1,6 +1,6 @@
 # Aragon React Kit Boilerplate
 
-> 🕵️ [Find more boilerplates using GitHub](https://github.com/search?q=topic:aragon-boilerplate) | 
+> 🕵️ [Find more boilerplates using GitHub](https://github.com/search?q=topic:aragon-boilerplate) |
 > ✨ [Official boilerplates](https://github.com/search?q=topic:aragon-boilerplate+org:aragon)
 
 React boilerplate for Aragon applications.
@@ -64,3 +64,7 @@ Running your app using IPFS will mimic the production environment that will be u
 - [**@aragon/os**](https://github.com/aragon/aragonos): Aragon interfaces
 - [**@aragon/client**](https://github.com/aragon/aragon.js/tree/master/packages/aragon-client): Wrapper for Aragon application RPC
 - [**@aragon/ui**](https://github.com/aragon/aragon-ui): Aragon UI components (in React)
+
+## Licensing
+
+Note that the [Kit contract](contracts/Kit.sol) has a special requirement on licensing because it includes contract dependencies that are licensed as `GPL-3.0-or-later`. This is the only file in your project that is required to be licensed this way, and you are free to choose a different license for the rest of the project.
