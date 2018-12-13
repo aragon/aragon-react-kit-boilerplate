@@ -38,5 +38,5 @@
     "publish": "aragon apm publish"
   },
   "keywords": [],
-  "license": "GPL-3.0"
+  "license": "(MIT OR GPL-3.0-or-later)"
 }
