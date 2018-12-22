@@ -52,7 +52,7 @@ contract KitBase is APMNamehash {
 contract Kit is KitBase {
     MiniMeTokenFactory tokenFactory;
 
-    uint256 constant PCT = 10 ** 16;
+    uint64 constant PCT = 10 ** 16;
     address constant ANY_ENTITY = address(-1);
 
     function Kit(ENS ens) KitBase(DAOFactory(0), ens) {
@@ -77,7 +77,7 @@ contract Kit is KitBase {
         token.changeController(tokenManager);
 
         app.initialize();
-        tokenManager.initialize(token, true, 0, true);
+        tokenManager.initialize(token, true, 0);
         // Initialize apps
         voting.initialize(token, 50 * PCT, 20 * PCT, 1 days);
 

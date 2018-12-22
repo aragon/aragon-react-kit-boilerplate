@@ -4,9 +4,9 @@
   "description": "",
   "dependencies": {
     "@aragon/apps-shared-minime": "^1.0.0",
-    "@aragon/apps-token-manager": "2.0.0-alpha.1",
-    "@aragon/apps-voting": "2.0.0-alpha.1",
-    "@aragon/os": "4.0.0-beta.1",
+    "@aragon/apps-token-manager": "2.0.0",
+    "@aragon/apps-voting": "2.0.0",
+    "@aragon/os": "4.0.1",
     "@aragon/client": "^1.0.0-beta.9",
     "@aragon/ui": "^0.16.0",
     "react": "^16.3.2",
@@ -35,7 +35,9 @@
     "build:app": "parcel build app/index.html -d dist/ --public-url '.' --no-cache",
     "build:script": "parcel build app/script.js -d dist/ --no-cache",
     "build": "npm run sync-assets && npm run build:app && npm run build:script",
-    "publish": "aragon apm publish"
+    "publish:content": "aragon apm publish minor --only-content",
+    "publish:minor": "aragon apm publish minor",
+    "publish:major": "aragon apm publish major"
   },
   "keywords": [],
   "license": "(MIT OR GPL-3.0-or-later)"
