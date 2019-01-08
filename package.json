@@ -39,7 +39,5 @@
     "publish:minor": "aragon apm publish minor",
     "publish:major": "aragon apm publish major",
     "versions": "aragon apm versions"
-  },
-  "keywords": [],
-  "license": "(MIT OR GPL-3.0-or-later)"
+  }
 }
