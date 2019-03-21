@@ -1,3 +1,5 @@
 node_modules
 build
 .cache
+.0x-artifacts
+package-lock.json
